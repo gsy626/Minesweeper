@@ -231,11 +231,14 @@ int main(int argc,char * argv[])
 			imagesetMAX(texture_pre[1],window,renderer);
 			while(SDL_WaitEvent(&event_pre))
 			{
-				if(event_pre.type==SDL_KEYDOWN | event_pre.type==SDL_MOUSEBUTTONDOWN  )
+				if(event_pre.type==SDL_KEYDOWN  )
 				{
 					running_pre=0;
 				}
-				
+				else if(event_pre.type==SDL_MOUSEBUTTONDOWN )
+				{
+					running_pre=0;
+				}
 				else if(event_pre.type==SDL_QUIT)
 				{
 					running_main=0;
